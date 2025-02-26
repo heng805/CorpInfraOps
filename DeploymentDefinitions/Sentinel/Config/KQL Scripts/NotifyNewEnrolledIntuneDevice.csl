@@ -1,0 +1,5 @@
+IntuneAuditLogs
+| sort by TimeGenerated desc
+| project-away TenantId, SourceSystem, Type
+| where OperationName contains "Add" or OperationName contains "New"
+| limit 500

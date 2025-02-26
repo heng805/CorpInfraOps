@@ -1,0 +1,6 @@
+let fileOperations = dynamic(["FileDeletedFirstStageRecycleBin","FolderDeletedFirstStageRecycleBin","FileDeleted","FileRecycled", "FolderDeletedSecondStageRecycleBin", "FolderRecycled", "FileDeletedSecondStageRecycleBin"]);
+OfficeActivity
+| where RecordType == "SharePointFileOperation"
+| where Operation in (fileOperations)
+| where Site_Url has "https://bioratherapeuticsinc.sharepoint.com/sites/"
+| project TimeGenerated, SourceRelativeUrl, SourceFileName, UserId, Operation, UserAgent, Site_Url

@@ -1,0 +1,10 @@
+IntuneDeviceComplianceOrg
+| project
+    TimeGenerated,
+    DeviceName,
+    UPN,
+    ComplianceState,
+    OwnerType,
+    DeviceHealthThreatLevel,
+    UserName
+| where ComplianceState has "Not Compliant" 

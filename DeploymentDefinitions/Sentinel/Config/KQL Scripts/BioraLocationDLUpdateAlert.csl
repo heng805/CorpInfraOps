@@ -1,0 +1,6 @@
+// Generates Low Sentinel alert if any action is taken to update Biora Distribution Lists
+ITAutomationLogEvents_CL
+| project TimeGenerated, ScriptName, Frequency, Activity, Message, DynamicProperties, Type
+| where ScriptName has "EXO-Biora-Location-DL-Update" or ScriptName has "EXO-Biora-All-DL-Update"
+| where Activity !has "ScriptStarted" and Activity !has "ScriptCompleted"
+| evaluate bag_unpack(DynamicProperties)

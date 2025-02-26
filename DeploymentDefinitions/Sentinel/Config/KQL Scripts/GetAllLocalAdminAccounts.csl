@@ -1,0 +1,5 @@
+DeviceLogonEvents
+| where TimeGenerated >= ago(7d)
+| where IsLocalAdmin == true
+| summarize count() by DeviceName, AccountName,LogonType
+| sort by AccountName

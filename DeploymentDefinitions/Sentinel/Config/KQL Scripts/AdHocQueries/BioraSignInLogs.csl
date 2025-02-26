@@ -1,0 +1,5 @@
+// TODO: Need to go back and id what columns / nested objects needed to display all relevant props for Biora AAD accounts
+
+SigninLogs
+| where UserDisplayName == ""
+| project-away ResourceId, OperationName, OperationVersion, Category, ResultSignature, DurationMs, CorrelationId, Resource, ResourceGroup, AppId, Id, ResourceIdentity, UserId, ResourceTenantId

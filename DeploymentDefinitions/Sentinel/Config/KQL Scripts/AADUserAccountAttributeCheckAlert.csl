@@ -1,0 +1,12 @@
+// Generate Low Sentinel log that some action was taken on a user account
+ITAutomationLogEvents_CL
+| project TimeGenerated, ScriptName, Frequency, Activity, Message, DynamicProperties, Type
+| where ScriptName has "AAD-User-Attribute-Check"
+| where Activity !has "ScriptStarted" and Activity !has "ScriptCompleted"
+| evaluate bag_unpack(DynamicProperties)
+
+// Generates Medium Sentinel alert that a user account was disabled
+ITAutomationLogEvents_CL
+| project TimeGenerated, ScriptName, Activity, Message, DynamicProperties, Platform, Frequency
+| where ScriptName == "AAD-User-Signin-Status" and Activity == "AccountDisabled"
+| evaluate bag_unpack(DynamicProperties)

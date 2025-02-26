@@ -1,0 +1,3 @@
+ITAutomationLogEvents_CL
+| project ScriptName, Activity, Message, DynamicProperties, Platform, Frequency
+| evaluate bag_unpack(DynamicProperties)

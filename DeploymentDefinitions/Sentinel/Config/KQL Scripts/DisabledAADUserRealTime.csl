@@ -1,0 +1,7 @@
+// Still WIP
+
+AuditLogs
+| where OperationName == "Disable account" or OperationName == "Delete user"
+| project ActivityDisplayName, TimeGenerated, TargetResources, InitiatedBy
+| evaluate bag_unpack(TargetResources)
+| evaluate bag_unpack(InitiatedBy)

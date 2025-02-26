@@ -1,0 +1,10 @@
+// Goal of this query is to generate events on legitimate business emails that get falsley moved into quarantine
+// The team can act to reclassify mail as false positive, then must move mail message back into mailbox
+// NOTE 'AuthorizedDomains' corresponds to .csv file, '..\ApprovedBusinessDomains.csv'
+
+let watchlist = (_GetWatchlist('AuthorizedDomains') | project Domain);
+EmailEvents
+| where EmailDirection != "Intra-org"
+| where DeliveryAction has "Blocked" or DeliveryAction has "Junked"
+| where SenderFromDomain in (watchlist)
+| project TimeGenerated, RecipientEmailAddress, Subject, SenderFromAddress, SenderFromDomain, SenderDisplayName, DeliveryLocation, EmailActionPolicy
