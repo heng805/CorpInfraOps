@@ -1,8 +1,7 @@
-// Initially needed to monitor outbound mail is successful to Care Research LLC, a critical business vendor
 // TODO after outbound mail to care research has stabalized, integrate with Sentinel Watchlist
 //      use GetVIPUserQUarantineEmailEvents script as reference to implement this
 EmailEvents
 | where EmailDirection == "Outbound"
 | where DeliveryAction contains "Blocked"
-| where RecipientEmailAddress contains "@careresearchllc.com"
+| where RecipientEmailAddress contains "@domain.com"
 

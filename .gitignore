@@ -1,0 +1,5 @@
+*.pfx
+*.cer
+Watchlists/
+.idea/
+.DS_Store

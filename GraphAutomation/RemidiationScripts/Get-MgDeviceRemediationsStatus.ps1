@@ -65,4 +65,4 @@ Function Get-MgDeviceRemediationsStatus {
     }
 }
 
-Get-MgDeviceRemediationsStatus -Computername "DL-9YYHST3"
+Get-MgDeviceRemediationsStatus -Computername ""

@@ -13,7 +13,7 @@ param (
     [string] $payload
 )
 #-- azure monitor variables --#
-$dcrImmutableId = "dcr-51a8bb781d6e442586468e04e92eb1ea"
+$dcrImmutableId = ""
 $dceURI = "https://it-automation-prd-dce-4q77.westus-1.ingest.monitor.azure.com"
 $logName = "IntuneDeviceDiscoveredApps_CL"
 

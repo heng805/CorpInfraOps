@@ -57,8 +57,8 @@ class myHTTPRequest
 
 # kick off script with class initialization
 $MGGraphPOST = [myHTTPRequest]::new(
-    "deb34c74-a799-4329-8f87-9bce4b975e24",
-    "69722ebc-b641-4af1-8096-094954e55ad6"
+    "",
+    ""
 )
 $MGGraphPOST.invokeRemediationPOST()
 

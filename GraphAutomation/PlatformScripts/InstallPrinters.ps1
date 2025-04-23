@@ -7,12 +7,12 @@
 
 
 $PrinterDriver = "SHARP MX-4141N PCL6"
-$PrinterName = "Carroll Canyon South-Sharp MX-4141N PCL6"
-$PrinterPort = "IP_10.5.0.85"
+$PrinterName = ""
+$PrinterPort = "IP_{ip}"
 
 write-host "running pnputil..."
 # Staging Driver
-pnputil.exe /add-driver "C:\CC_South_Printer\Sharp_MX-4141N_PCL6\64bit\ss0emenu.inf"
+pnputil.exe /add-driver ""
 
 Write-Host "Installing driver via IP..."
 #Installing Driver
@@ -22,7 +22,7 @@ add-PrinterDriver -Name $PrinterDriver
 $checkPortExists = Get-Printerport -Name $PrinterPort -ErrorAction SilentlyContinue
 if (-not $checkPortExists) 
 {
-Add-PrinterPort -name $PrinterPort -PrinterHostAddress 10.5.0.85
+Add-PrinterPort -name $PrinterPort -PrinterHostAddress # {IP}
 }
 
 #check if printer driver exists

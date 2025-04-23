@@ -16,7 +16,7 @@ $thisName = "Get-DeviceAppInventory"
 
 
 # Connect to IT prd kv
-$vaultName = "IT-Automation-Key-Vault"
+$vaultName = ""
 $certThumb = Get-AzKeyVaultSecret -VaultName $vaultName -Name "IT-Automation-CertificateThumbPrint" -AsPlainText
 $appId     = Get-AzKeyVaultSecret -VaultName $vaultName -Name "IT-Automation-ApplicationID" -AsPlainText
 $tenantId  = Get-AzKeyVaultSecret -VaultName $vaultName -Name "Biora-azure-TenantID" -AsPlainText

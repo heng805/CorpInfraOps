@@ -14,10 +14,10 @@ TODO There is a new spectrometer that will also need to upload to CMCDev SP site
 start-transcript -path "C:\Temp_Folder\PSDebuggingLogs\copy-tospsite.txt" -noclobber
 
 # Auth to Azure Automation via self signed cert
-$PNP_APP_ID     = 'c3195b48-3361-46c9-9bcf-bcb11676cbd5'
-$SP_TENANT_URL  = 'bioratherapeutics.onmicrosoft.com'
-$spRootURL      = 'bioratherapeuticsinc.sharepoint.com/sites/BioraCMCDevelopment'
-$certThumb      = '7FA6B1E3D2539189B07EB6C47176BF7FC1C8520C'
+$PNP_APP_ID     = ''
+$SP_TENANT_URL  = ''
+$spRootURL      = ''
+$certThumb      = ''
 
 try 
 {

@@ -1,4 +1,4 @@
-// TODO: Need to go back and id what columns / nested objects needed to display all relevant props for Biora AAD accounts
+// TODO: Need to go back and id what columns / nested objects needed to display all relevant props for Corp AAD accounts
 
 SigninLogs
 | where UserDisplayName == ""
